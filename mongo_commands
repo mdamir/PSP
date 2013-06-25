@@ -1,0 +1,5 @@
+db.pnr_final.find({final_status:{$exists:1}}).count()
+db.pnr_final.find({final_status:'wl'}).count()
+db.pnr_final.find({final_status:'rac'}).count()
+db.pnr_final.find({final_status:'cnf'}).count()
+db.pnr_final.update({final_status:{$exists:1}},{$unset:{final_status:1}},false,true)
